@@ -28,5 +28,17 @@ class NextDayCalculatorTest {
         assertEquals(expected,result);
     }
 
+    @Test
+    @DisplayName("Test Next Day")
+    public void findNextDay30_4_2024() {
+        NextDayCalculator nextDayCalculator = new NextDayCalculator();
+        int day = 30;
+        int month = 4;
+        int year = 2024;
+        String expected = "1/5/2024";
+        String result = nextDayCalculator.getNextDayforMaxDay(day,month,year);
+        assertEquals(expected,result);
+    }
+
 
 }

@@ -2,6 +2,7 @@ public class NextDayCalculator {
     public String getNextDayforMaxDay(int day, int month, int year) {
         String concat = "/";
         int daysInMonth;
+        boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
         switch (month) {
             case 1:
             case 3:
@@ -19,7 +20,7 @@ public class NextDayCalculator {
                 daysInMonth = 30;
                 break;
             case 2:
-                daysInMonth = 29;
+                daysInMonth = isLeapYear ? 29 : 28;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + month);
@@ -45,7 +46,7 @@ public class NextDayCalculator {
         String concat = "/";
         String result = (day+1) + concat + month + concat + year;
         return result;
-
     }
+
 
 }
